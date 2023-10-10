@@ -15,9 +15,9 @@ export default function Counter(props) {
     }
   return (
     <div>
-        <button type="button" onClick={inc}  className="btn btn-primary mx-3">Increment</button>
-        <button type="button" onClick={dec} onChange={handleOnChange} className="btn btn-secondary">Decrement</button>
-        <textarea className="form-control my-3" value={curr} onChange={handleOnChange} rows="3"></textarea>
+        <button type="button" onClick={inc}  className={`btn btn-${props.mode==='light'?'primary':'success'} my-3 mx-3`}>Increment</button>
+        <button type="button" onClick={dec}  className={`btn btn-${props.mode==='light'?'secondary':'danger'} my-3 mx-3`}>Decrement</button>
+        <textarea className="form-control my-3" value={curr} onChange={props.toggleMode} rows="3"></textarea>
     </div>
   )
 }

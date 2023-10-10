@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
   return (
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme={props.mode}>
   <div className="container-fluid">
     <a className="navbar-brand" href="/">{props.title}</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,9 +19,9 @@ export default function Navbar(props) {
         </li>
       </ul>
     </div>
-  <div class="form-check form-switch  ">
-  <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
-  <label class="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark Mode</label>
+  <div className="form-check form-switch  ">
+  <input className="form-check-input" type="checkbox" onClick={props.toggleMode} role="switch" id="flexSwitchCheckDefault"/>
+  <label className= {`form-check-label text-${props.mode==='dark'?'light':'dark'}`} htmlFor="flexSwitchCheckDefault">Enable {props.mode==='dark'?'Light':'Dark'} Mode</label>
 </div>
   </div>
 </nav>
@@ -30,10 +30,12 @@ export default function Navbar(props) {
 
 Navbar.propTypes={
     title: PropTypes.string,
-    link : PropTypes.string
+    link : PropTypes.string,
+    mode : PropTypes.string
 }
 
 Navbar.defaultProps = {
     title: 'Stranger',
-    link : 'link last'
+    link : 'link last',
+    mode : 'light'
 };
