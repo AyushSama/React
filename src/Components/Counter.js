@@ -11,19 +11,19 @@ export default function Counter(props) {
         setCount(curr-1);
     }
     const handleOnChange = (event)=>{
-        setCount(event.target.number)
+        setCount(event.target.value)
     }
   return (
     <div>
         <button type="button" onClick={inc}  className={`btn btn-${props.mode==='light'?'primary':'success'} my-3 mx-3`}>Increment</button>
         <button type="button" onClick={dec}  className={`btn btn-${props.mode==='light'?'secondary':'danger'} my-3 mx-3`}>Decrement</button>
-        <textarea className="form-control my-3" value={curr} onChange={props.toggleMode} rows="3"></textarea>
+        <textarea className="form-control my-3" value={curr} onChange={handleOnChange} rows="3"></textarea>
     </div>
   )
 }
 
 Counter.propTypes={
-    count: PropTypes.number,
+    count: PropTypes.string,
 }
 
 Counter.defaultProps = {
