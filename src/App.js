@@ -5,6 +5,13 @@ import Counter from './Components/Counter';
 import Navbar from './Components/Navbar';
 import React, { useState } from 'react'
 
+import{
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link
+} from "react-router-dom";
+
 function App() {
 
   const [mode , setMode] = useState('light');
@@ -34,16 +41,18 @@ function App() {
   }
 
   return (
-    <>
-    <div>
-    <Navbar title="Ayush" link="HK" mode={mode} toggleMode={toggleMode}/>
-    </div>
-    <Alert alert={alert} />
-    <div className="container">
-    <Counter mode={mode} toggleMode={toggleMode}/>
-    <About mode={mode} toggleMode={toggleMode}/>
-    </div>
-    </>
+      <div>
+        <Router>
+          <Navbar title="Ayush" link="HK" mode={mode} toggleMode={toggleMode} />
+          <Alert alert={alert} />
+          <Routes>
+          <Route path="/home" element={<Counter mode={mode} toggleMode={toggleMode} />} />
+          </Routes>
+          <Routes>
+            <Route path="/about" element={<About mode={mode} toggleMode={toggleMode} />} />
+          </Routes>
+        </Router>
+      </div>  
   );
 }
 

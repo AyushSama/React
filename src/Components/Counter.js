@@ -27,5 +27,5 @@ Counter.propTypes={
 }
 
 Counter.defaultProps = {
-    count: 0
+    count: "0"
 };
