@@ -1,0 +1,58 @@
+.container{
+    margin-top: 60px;
+}
+
+.square{
+    background-color: rgb(44, 5, 60);
+    border-radius: 10%;
+    margin-left: 35%;
+    height: 500px;
+    width: 350px;  
+    border: 1px solid black;
+}
+
+.circle{
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    margin-left: 15%;
+    margin-top: 15%;
+    height: 250px;
+    width: 250px;
+    border-radius: 200px;
+    border: 1px solid darkblue;
+}
+
+.inc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: green;
+    margin-left: 18%;
+    margin-top: 15%;
+    color: wheat;
+    font-size: 70px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+.dec{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: red;
+    margin-left: 55%;
+    margin-top: -28.7%;
+    color: wheat;
+    font-size: 70px;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+}
+
+

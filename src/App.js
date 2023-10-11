@@ -8,9 +8,9 @@ import React, { useState } from 'react'
 import{
   BrowserRouter as Router,
   Routes,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
+import Temperature from './Components/Temperature';
 
 function App() {
 
@@ -50,6 +50,9 @@ function App() {
           </Routes>
           <Routes>
             <Route path="/about" element={<About mode={mode} toggleMode={toggleMode} />} />
+          </Routes>
+          <Routes>
+            <Route path="/temperature" element={<Temperature/>} />
           </Routes>
         </Router>
       </div>  
